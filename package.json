@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -28,6 +29,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^1.19.1",
     "typescript": "~4.1.5",
     "vue-template-compiler": "^2.6.11"
@@ -51,5 +54,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,tsx,vue}": "eslint --cache --fix",
+    "*.{ts,tsx,vue,css,md}": "prettier --write"
+  }
 }
